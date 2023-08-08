@@ -20,24 +20,24 @@ public class TaskController {
 	@RequestMapping("/alltasks")
 	public List<Task> getAllTask()
 	{
-		return subjectService.getAllSubjects();
+		return taskService.getAllSubjects();
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
-	public void addSub(@RequestBody Subject subject)
+	public void addTask(@RequestBody Task task)
 	{
-		subjectService.addSubject(subject);
+		taskService.addSubject(task);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="/changeTask/{id}")
-	public void updateSubject(@PathVariable String id, @RequestBody Subject subject)
+	public void updateTask(@PathVariable String id, @RequestBody Task task)
 	{
-		subjectService.updateSubject(id, subject);
+		task.updateSubject(id, task);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
-	public void DeleteSubject(@PathVariable String id)
+	public void delTask(@PathVariable String id)
 	{
-		subjectService.deleteSubject(id);
+		taskService.deleteSubject(id);
 	}
 	
 	
