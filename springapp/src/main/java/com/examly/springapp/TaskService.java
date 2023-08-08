@@ -19,10 +19,10 @@ public class TaskService {
 		return task;
 	}
 
-	public List<Task> getData()
+	public List<Task> getData(String id)
 	{
 		List<Task> task = new ArrayList<>();
-		taskRepo.findAll().forEach(task::add);
+		taskRepo.findById(id);
 		return task;
 	}
 
