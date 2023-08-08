@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="task1")
-public class Subject {
+public class Task {
 	
 	@Id
 	private String taskId;
@@ -15,7 +15,7 @@ public class Subject {
 	private String taskName;
 	private String taskStatus;
 	
-	public Subject(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
+	public Task(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
 		super();
 		this.taskId = taskId;
 		this.taskHolderName = taskHolderName;
@@ -23,7 +23,7 @@ public class Subject {
 		this.taskName = taskName;
 		this.taskStatus = taskStatus;
 	}
-	public Subject() {
+	public Task() {
 		
 	}
 	public String getTaskId() {

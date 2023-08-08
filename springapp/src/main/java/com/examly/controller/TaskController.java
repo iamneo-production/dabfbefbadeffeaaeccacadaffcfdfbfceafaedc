@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.examly.bean.Subject;
-import com.examly.service.SubjectService;
+import com.examly.bean.Task;
+import com.examly.service.TaskService;
 
 @RestController
-public class SubjectController {
+public class TaskController {
 	@Autowired
-	private SubjectService subjectService;
+	private TaskService taskService;
 
-	@RequestMapping(method = RequestMethod.GET, value="/alltasks")
-	public List<Subject> getAllSubjects()
+	@RequestMapping("/alltasks")
+	public List<Task> getAllTask()
 	{
 		return subjectService.getAllSubjects();
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
-	public void addSubject(@RequestBody Subject subject)
+	public void addSub(@RequestBody Subject subject)
 	{
 		subjectService.addSubject(subject);
 	}

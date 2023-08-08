@@ -2,9 +2,9 @@ package com.examly.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.examly.bean.Subject;
+import com.examly.bean.Task;
 
-public interface SubjectRepository extends CrudRepository<Subject,String> {
+public interface TaskRepository extends CrudRepository<Task,String> {
 	
 
 }
