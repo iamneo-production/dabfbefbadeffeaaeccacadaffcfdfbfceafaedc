@@ -1,4 +1,4 @@
-package com.xadmin.SpringBootCrud.controller;
+package com.examly.controller;
 
 import java.util.List;
 
@@ -9,35 +9,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xadmin.SpringBootCrud.bean.Subject;
-import com.xadmin.SpringBootCrud.service.SubjectService;
+import com.examly.bean.Task;
+import com.examly.service.*;
 
 @RestController
-public class SubjectController {
+public class TaskController {
 	@Autowired
-	private SubjectService subjectService;
+	private TaskService taskService;
 
 	@RequestMapping("/alltasks")
-	public List<Subject> getAllSubjects()
+	public List<Task> getAllSubjects()
 	{
-		return subjectService.getAllSubjects();
+		return taskService.getAllSubjects();
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
-	public void addSubject(@RequestBody Subject subject)
+	public void addSubject(@RequestBody Task task)
 	{
-		subjectService.addSubject(subject);
+		taskService.addSubject(task);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="/changeTask/{id}")
-	public void updateSubject(@PathVariable String id, @RequestBody Subject subject)
+	public void updateSubject(@PathVariable String id, @RequestBody Task task)
 	{
-		subjectService.updateSubject(id, subject);
+		taskService.updateSubject(id, task);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
 	public void DeleteSubject(@PathVariable String id)
 	{
-		subjectService.deleteSubject(id);
+		taskService.deleteSubject(id);
 	}
 	
 	

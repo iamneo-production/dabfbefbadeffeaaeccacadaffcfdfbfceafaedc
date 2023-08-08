@@ -23,7 +23,7 @@ public class Task {
 		this.taskName = taskName;
 		this.taskStatus = taskStatus;
 	}
-	public Subject() {
+	public Task() {
 		
 	}
 	public String getTaskId() {
