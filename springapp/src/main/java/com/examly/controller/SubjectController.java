@@ -17,7 +17,7 @@ public class SubjectController {
 	@Autowired
 	private SubjectService subjectService;
 
-	@RequestMapping("/alltasks")
+	@RequestMapping(method = RequestMethod.GET, value="/alltasks")
 	public List<Subject> getAllSubjects()
 	{
 		return subjectService.getAllSubjects();
