@@ -1,8 +1,8 @@
-package com.examly.springapp.repo;
+package com.examly.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.examly.springapp.bean.Subject;
+import com.examly.bean.Subject;
 
 public interface SubjectRepository extends CrudRepository<Subject,String> {
 	

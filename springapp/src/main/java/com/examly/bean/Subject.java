@@ -1,4 +1,4 @@
-package com.examly.springapp.bean;
+package com.examly.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

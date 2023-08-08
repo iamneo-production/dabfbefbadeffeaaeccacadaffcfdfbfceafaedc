@@ -1,4 +1,4 @@
-package com.examly.springapp.controller;
+package com.examly.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.examly.springapp.bean.Subject;
-import com.examly.springapp.service.SubjectService;
+import com.examly.bean.Subject;
+import com.examly.service.SubjectService;
 
 @RestController
 public class SubjectController {

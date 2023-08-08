@@ -1,4 +1,4 @@
-package com.examly.springapp.service;
+package com.examly.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examly.springapp.bean.Subject;
-import com.examly.springapp.repo.SubjectRepository;
+import com.examly.bean.Subject;
+import com.examly.repo.SubjectRepository;
 
 @Service
 public class SubjectService {
