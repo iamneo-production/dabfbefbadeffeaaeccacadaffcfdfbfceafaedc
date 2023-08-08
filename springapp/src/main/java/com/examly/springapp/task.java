@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Subject1")
-public class Subject {
+public class task {
 	
 	@Id
 	private String taskId;
