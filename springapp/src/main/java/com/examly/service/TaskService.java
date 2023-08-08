@@ -1,4 +1,4 @@
-package com.examly.
+package com.examly.service;
 
 import java.util.ArrayList;
 import java.util.List;
