@@ -32,7 +32,7 @@ public class TaskService {
 	}
 
 	public void deleteTask(String id) {
-		taskRepo.deleteById(id);
+		subjectRepo.deleteById(id);
 		
 	}
 }
