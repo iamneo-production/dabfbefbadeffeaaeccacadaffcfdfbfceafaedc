@@ -29,13 +29,13 @@ public class TaskController {
 		taskService.addTask(task);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="/changeTask/{id}")
+	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
 	public void updateTask(@PathVariable String id, @RequestBody Task task)
 	{
 		taskService.updateTask(id, task);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
-	public void delTask(@PathVariable String id)
+	public void deleteTask(@PathVariable String id)
 	{
 		taskService.deleteTask(id);
 	}
