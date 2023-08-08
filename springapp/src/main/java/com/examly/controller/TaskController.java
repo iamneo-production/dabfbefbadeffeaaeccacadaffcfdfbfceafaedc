@@ -29,7 +29,7 @@ public class TaskController {
 		taskService.addSubject(task);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="/changeTask/{id}")
+	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
 	public void updateSubject(@PathVariable String id, @RequestBody Task task)
 	{
 		taskService.updateSubject(id, task);
