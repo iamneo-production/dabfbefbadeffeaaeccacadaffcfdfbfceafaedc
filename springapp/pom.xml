@@ -5,17 +5,20 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.5</version>
+		<version>2.1.15.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.examly</groupId>
-	<artifactId>springapp</artifactId>
+	<groupId>com.xadmin</groupId>
+	<artifactId>SpringBootCrud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>SpringBootCrud</name>
+	<description>Demo project for Spring Boot for crud operation</description>
+
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -36,26 +39,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-           <groupId>org.mockito</groupId>
-           <artifactId>mockito-core</artifactId>
-        </dependency>
 	</dependencies>
 
 	<build>
