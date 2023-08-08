@@ -1,4 +1,4 @@
-package com.examly.service;
+package com.examly.
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class TaskService {
 	}
 
 	public void deleteTask(String id) {
-		subjectRepo.deleteById(id);
+		taskRepo.deleteById(id);
 		
 	}
 }
