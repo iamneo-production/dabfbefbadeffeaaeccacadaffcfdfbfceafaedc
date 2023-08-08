@@ -14,9 +14,16 @@ public class TaskService {
 
 	public List<Task> getAllSubjects()
 	{
-		List<Task> tasklist = new ArrayList<>();
-		taskRepo.findAll().forEach(tasklist::add);
-		return tasklist;
+		List<Task> task = new ArrayList<>();
+		taskRepo.findAll().forEach(task::add);
+		return task;
+	}
+
+	public List<Task> getData()
+	{
+		List<Task> task = new ArrayList<>();
+		taskRepo.findAll().forEach(task::add);
+		return task;
 	}
 
 	public void addSubject(Task task) {

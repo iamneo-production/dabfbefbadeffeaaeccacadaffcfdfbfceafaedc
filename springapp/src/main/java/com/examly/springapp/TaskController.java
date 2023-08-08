@@ -32,6 +32,12 @@ public class TaskController {
 	{
 		taskService.updateSubject(id, task);
 	}
+
+	@RequestMapping(method = RequestMethod.GET, value="/getTask/{id}")
+	public void getSubject(@PathVariable String id, @RequestBody Task task)
+	{
+		return taskService.getData();
+	}
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
 	public void deleteSubject(@PathVariable String id)
 	{
