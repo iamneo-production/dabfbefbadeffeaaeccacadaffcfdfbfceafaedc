@@ -1,4 +1,4 @@
-package com.xadmin.SpringBootCrud.service;
+package com.examly.springapp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.xadmin.SpringBootCrud.bean.Subject;
-import com.xadmin.SpringBootCrud.repository.SubjectRepository;
+import com.examly.springapp.Subject;
+import com.examly.springapp.SubjectRepository;
 
 @Service
 public class SubjectService {

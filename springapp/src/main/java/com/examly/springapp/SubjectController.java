@@ -1,4 +1,4 @@
-package com.xadmin.SpringBootCrud.controller;
+package com.examly.springapp;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xadmin.SpringBootCrud.bean.Subject;
-import com.xadmin.SpringBootCrud.service.SubjectService;
+import com.examly.springapp.Subject;
+import com.examly.springapp.SubjectService;
 
 @RestController
 public class SubjectController {
