@@ -1,4 +1,4 @@
-package com.examly.service;
+package com.xadmin.SpringBootCrud.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,33 +6,33 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examly.bean.Task;
-import com.examly.repo.TaskRepository;
+import com.xadmin.SpringBootCrud.bean.Subject;
+import com.xadmin.SpringBootCrud.repository.SubjectRepository;
 
 @Service
-public class TaskService {
+public class SubjectService {
 	@Autowired
-	public TaskRepository taskRepo;
+	public SubjectRepository subjectRepo;
 
-	public List<Task> getAllTask()
+	public List<Subject> getAllSubjects()
 	{
-		List<Task> tasks = new ArrayList<>();
-		taskRepo.findAll().forEach(tasks::add);
-		return tasks;
+		List<Subject> subjects = new ArrayList<>();
+		subjectRepo.findAll().forEach(subjects::add);
+		return subjects;
 	}
 
-	public void addTask(Task task) {
-		taskRepo.save(task);
+	public void addSubject(Subject subject) {
+		subjectRepo.save(subject);
 		
 	}
 
-	public void updateTask(String id, Task task) {
-		taskRepo.save(task);
+	public void updateSubject(String id, Subject subject) {
+		subjectRepo.save(subject);
 		
 	}
 
-	public void deleteTask(String id) {
-		taskRepo.deleteById(id);
+	public void deleteSubject(String id) {
+		subjectRepo.deleteById(id);
 		
 	}
 }

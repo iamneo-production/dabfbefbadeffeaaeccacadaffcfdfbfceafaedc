@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="task1")
+@Table(name="Subject1")
 public class Task {
 	
 	@Id
@@ -23,7 +23,7 @@ public class Task {
 		this.taskName = taskName;
 		this.taskStatus = taskStatus;
 	}
-	public Task() {
+	public Subject() {
 		
 	}
 	public String getTaskId() {
