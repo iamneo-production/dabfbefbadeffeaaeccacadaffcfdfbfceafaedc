@@ -1,4 +1,4 @@
-package com.examly.springapp;
+package com.examly.repo;
 
 import org.springframework.data.repository.CrudRepository;
 

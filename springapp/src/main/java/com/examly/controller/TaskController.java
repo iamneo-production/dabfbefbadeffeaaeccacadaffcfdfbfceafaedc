@@ -1,4 +1,4 @@
-package com.examly.springapp;
+package com.examly.controller;
 
 import java.util.List;
 
