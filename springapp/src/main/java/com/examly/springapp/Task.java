@@ -11,6 +11,7 @@ import javax.persistence.Column;
 public class Task {
 	
 	@Id
+	@Column(name="taskId")
 	private String taskId;
 	@Column(name = "taskHolderName")
 	private String taskHolderName;
