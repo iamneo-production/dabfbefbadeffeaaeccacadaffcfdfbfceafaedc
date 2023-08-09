@@ -1,6 +1,7 @@
 package com.examly.springapp;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,9 +36,9 @@ public class TaskController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value="/getTask/{id}")
-	public void getTaskById(@PathVariable String id)
+	public Optional<TaskModel> getTaskById(@PathVariable String id)
 	{
-		service.getTaskById(id);
+		return service.getTaskById(id);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
