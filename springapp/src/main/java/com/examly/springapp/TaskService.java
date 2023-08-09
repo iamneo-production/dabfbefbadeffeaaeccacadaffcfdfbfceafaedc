@@ -15,7 +15,7 @@ public class TaskService {
 	public List<Task> getAllTask()
 	{
 		List<Task> tasks = new ArrayList<Task>();  
-		taskRepo.findAll().forEach(task1 -> books.add(task1));  
+		taskRepo.findAll().forEach(task1 -> tasks.add(task1));  
 		return tasks;  
 	}
 
@@ -28,7 +28,9 @@ public class TaskService {
 		taskRepo.save(task);
 		
 	}
-
+    public Task getTaskById(String id){
+        return taskRepo.findById(id).get();  
+	}
 	public void deleteTask(String id) {
 		taskRepo.deleteById(id);
 		

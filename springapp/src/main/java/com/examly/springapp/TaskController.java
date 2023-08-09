@@ -24,7 +24,7 @@ public class TaskController {
 	@GetMapping("/getTask/{id}")  
 	public Task getTaskById(@PathVariable("taskId") String id)   
 	{  
-		return TaskService.getTasksById(id);  
+		return taskService.getTaskById(id);  
 	}  
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
 	public void addTask(@RequestBody Task task)
