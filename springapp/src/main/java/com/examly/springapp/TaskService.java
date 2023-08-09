@@ -12,19 +12,19 @@ public class TaskService {
 	@Autowired
 	public TaskRepo repo;
 
-	public List<taskmodel> getAllTasks()
+	public List<Taskmodel> getAllTasks()
 	{
-		List<taskmodel> list = new ArrayList<>();
+		List<Taskmodel> list = new ArrayList<>();
 		repo.findAll().forEach(list::add);
 		return list;
 	}
 
-	public void addTask(taskmodel model) {
+	public void addTask(Taskmodel model) {
 		repo.save(model);
 		
 	}
 
-	public void updateTask(String id, taskmodel model) {
+	public void updateTask(String id, Taskmodel model) {
 		repo.save(model);
 		
 	}

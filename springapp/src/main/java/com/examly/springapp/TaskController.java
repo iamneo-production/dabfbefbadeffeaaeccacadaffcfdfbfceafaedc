@@ -34,7 +34,7 @@ public class TaskController {
 		service.updateTask(id, model);
 	}
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
-	public void DeleteSubject(@PathVariable String id)
+	public void deleteSubject(@PathVariable String id)
 	{
 		service.deleteTask(id);
 	}
