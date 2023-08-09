@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,12 +36,12 @@ public class TaskController {
 		service.updateTask(id, model);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value="/getTask/{id}")
-	public TaskModel getTaskById(@PathVariable String id)
-	{
-		return service.getTaskById(id);
-	}
-
+	@GetMapping("/getTask/{id}")
+    public ResponseEntity<TaskModel> getTaskById(@PathVariable("id") String id) {
+        ResponseEntity<TaskModel> matchtask = new ResponseEntity<Task>(service.getTaskById(id), HttpStatus.OK);
+        return matchtask;
+    }
+	
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
 	public void deleteTask(@PathVariable String id)
 	{
