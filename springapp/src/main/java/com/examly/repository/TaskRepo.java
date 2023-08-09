@@ -1,9 +1,9 @@
-package com.example.Repository;
+package com.examly.repository;
 
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.model.taskmodel;
+import com.examly.model.taskmodel;
 
 
 

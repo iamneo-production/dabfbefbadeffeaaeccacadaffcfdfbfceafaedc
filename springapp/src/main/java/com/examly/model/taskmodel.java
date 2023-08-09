@@ -1,7 +1,9 @@
-package com.example.model;
+package com.examly.model;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+
 @Entity
 @Table(name="Tasks")
 public class taskmodel {
