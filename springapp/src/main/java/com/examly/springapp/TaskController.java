@@ -35,9 +35,9 @@ public class TaskController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value="/getTask/{id}")
-	public void getTaskById(@PathVariable String id, @RequestBody TaskModel model)
+	public void getTaskById(@PathVariable String id)
 	{
-		service.getTaskById(id, model);
+		service.getTaskById(id);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")

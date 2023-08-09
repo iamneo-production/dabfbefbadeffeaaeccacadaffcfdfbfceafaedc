@@ -29,9 +29,8 @@ public class TaskService {
 	}
 
 	
-    public TaskModel getTaskById(String id, TaskModel model) {
-        Optional<TaskModel> optionalUser = repo.findById(id);
-        return optionalUser.get();
+    public TaskModel getTaskById(String id) {
+        return repo.findById(id);
     }
 	
 
