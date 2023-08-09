@@ -1,12 +1,11 @@
 package com.examly.springapp;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+//import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-@SpringBootApplication
-@EnableAutoConfiguration
-@EntityScan(basePackages = "com.examly.model")
+//import org.springframework.boot.autoconfigure.domain.EntityScan;
+@SpringBootApplication(scanBasePackages = "com.examly")
+
 public class SpringappApplication {
 
 	public static void main(String[] args) {
