@@ -38,7 +38,13 @@ public class TaskServiceImpl implements TaskService {
 
 	
     public TaskModel getTaskById(String id) {
-        return repo.findById(id);
+        Optional<TaskModel> task = repo.findById(id);
+        if (task.isPresent()) {
+            return task.get();
+        }
+        else {
+            return null;
+        }
     }
 	
 
