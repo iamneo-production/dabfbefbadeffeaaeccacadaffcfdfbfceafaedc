@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.examly.Repository.TaskRepo;
 import com.examly.model.taskmodel;
+import com.examly.repository.TaskRepo;
 
 @Service
 public class TaskService {

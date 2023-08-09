@@ -1,5 +1,5 @@
 com/examly/model/taskmodel.class
-com/examly/Repository/TaskRepo.class
+com/examly/repository/TaskRepo.class
 com/examly/springapp/SpringappApplication.class
 com/examly/controller/TaskController.class
 com/examly/service/TaskService.class
