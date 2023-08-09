@@ -12,11 +12,9 @@ public class TaskService {
 	@Autowired
 	public TaskRepo repo;
 
-	public Iterable<TaskModel> getAllTasks()
+	public List<TaskModel> getAllTasks()
 	{
-		List<TaskModel> list = new ArrayList<>();
-		repo.findAll().forEach(list::add);
-		return list;
+		return (List<TaskModel>) repo.findAll();
 	}
 
 	public void addTask(TaskModel model) {
@@ -29,6 +27,11 @@ public class TaskService {
 		
 	}
 
+	@Override
+    public User getUserById(Long userId) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        return optionalUser.get();
+    }
 	public void getTaskById(String id, TaskModel model) {
 		repo.findById(id);
 		
