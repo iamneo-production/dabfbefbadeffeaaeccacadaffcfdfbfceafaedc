@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 
 
-public interface TaskRepo extends CrudRepository<Taskmodel,String> {
+public interface TaskRepo extends CrudRepository<TaskModel,String> {
 	
 
 }

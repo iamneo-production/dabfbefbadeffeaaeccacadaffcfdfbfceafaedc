@@ -17,19 +17,19 @@ public class TaskController {
 	private TaskService service;
 
 	@RequestMapping("/alltasks")
-	public List<taskmodel> getAllTasks()
+	public List<TaskModel> getAllTasks()
 	{
 		return service.getAllTasks();
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
-	public void addTask(@RequestBody taskmodel model)
+	public void addTask(@RequestBody TaskModel model)
 	{
 		service.addTask(model);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
-	public void updateTask(@PathVariable String id, @RequestBody taskmodel model)
+	public void updateTask(@PathVariable String id, @RequestBody TaskModel model)
 	{
 		service.updateTask(id, model);
 	}
