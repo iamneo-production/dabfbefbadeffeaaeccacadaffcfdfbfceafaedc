@@ -17,7 +17,7 @@ public class TaskController {
 	private TaskService service;
 
 	@RequestMapping("/alltasks")
-	public List<TaskModel> getAllTasks()
+	public Iterable<TaskModel> getAllTasks()
 	{
 		return service.getAllTasks();
 	}

@@ -12,9 +12,9 @@ public class TaskService {
 	@Autowired
 	public TaskRepo repo;
 
-	public List<TaskModel> getAllTasks()
+	public Iterable<TaskModel> getAllTasks()
 	{
-		List<TaskModel> list = new ArrayList<TaskModel>();
+		List<TaskModel> list = new ArrayList<>();
 		repo.findAll().forEach(list::add);
 		return list;
 	}
