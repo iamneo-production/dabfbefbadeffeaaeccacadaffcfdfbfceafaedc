@@ -11,6 +11,10 @@ import org.springframework.stereotype.Service;
 public class TaskService {
 	@Autowired
 	public TaskRepository taskRepo;
+    public void addTask(Task task) {
+		taskRepo.save(task);
+		
+	}
 
 	public List<Task> getAllTask()
 	{
@@ -19,8 +23,12 @@ public class TaskService {
 		return tasks;  
 	}
 
-	public void addTask(Task task) {
-		taskRepo.save(task);
+	public Task getTaskById(String id){
+        return taskRepo.findById(id).get();  
+	}
+
+	public void deleteTask(String id) {
+		taskRepo.deleteById(id);
 		
 	}
 
@@ -28,11 +36,6 @@ public class TaskService {
 		taskRepo.save(task);
 		
 	}
-    public Task getTaskById(String id){
-        return taskRepo.findById(id).get();  
-	}
-	public void deleteTask(String id) {
-		taskRepo.deleteById(id);
-		
-	}
+    
+	
 }
