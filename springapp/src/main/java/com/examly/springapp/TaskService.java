@@ -14,7 +14,7 @@ public class TaskService {
 
 	public List<TaskModel> getAllTasks()
 	{
-		List<TaskModel> list = new ArrayList<>();
+		List<TaskModel> list = new ArrayList<TaskModel>();
 		repo.findAll().forEach(list::add);
 		return list;
 	}
