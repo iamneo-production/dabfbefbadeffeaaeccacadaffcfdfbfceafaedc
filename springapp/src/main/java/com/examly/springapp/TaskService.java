@@ -15,7 +15,7 @@ public class TaskService {
 
 	public List<TaskModel> getAllTasks()
 	{
-		return (List<TaskModel>) repo.findAll();
+		return repo.findAll();
 	}
 
 	public void addTask(TaskModel model) {
