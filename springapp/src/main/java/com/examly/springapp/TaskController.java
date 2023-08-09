@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class TaskController {
 	@Autowired
-	private TaskService taskService;
     private TaskRepository taskRepo;
+
+	private TaskService taskService;
+    
     @RequestMapping("/")
     public String index() {
         return "index";
@@ -28,36 +31,36 @@ public class TaskController {
 
     @RequestMapping(value = "/allTask", method = RequestMethod.GET)
     public ModelAndView findAllUsers(ModelAndView mav) {
-        List<Task> tasks = taskRepo.findAll();
+        Iterable<Task> tasks = taskRepo.findAll();
         mav.addObject("tasks", tasks);
         mav.setViewName("getData");
         return mav;
     }
 
     @RequestMapping("/getTask")
-    public ModelAndView getuser(@RequestParam int id) {
+    public ModelAndView getuser(@RequestParam String id) {
 
-        ModelAndView mav = new ModelAndView("showUser");
-        User user = userdao.findById(id).orElse(new User());
-        mav.addObject(user);
+        ModelAndView mav = new ModelAndView("showTasks");
+        Task task = taskRepo.findById(id).orElse(new Task());
+        mav.addObject(task);
         return mav;
     }
 
     @RequestMapping("/changeStatus")
-    public ModelAndView updateuser(User user) {
+    public ModelAndView updateuser(Task task) {
 
-        ModelAndView mav = new ModelAndView("updateUser");
-        user = userdao.findById(user.getTaskId()).orElse(new User());
-        userdao.deleteById(user.getTaskId());
-        mav.addObject(user);
+        ModelAndView mav = new ModelAndView("updateTasks");
+        task = taskRepo.findById(task.getTaskId()).orElse(new Task());
+        taskRepo.deleteById(task.getTaskId());
+        mav.addObject(task);
         return mav;
     }
 
     @RequestMapping("/deleteTask")
     public ModelAndView deleteuser(@RequestParam int id) {
 
-        ModelAndView mav = new ModelAndView("deleteUser");
-        User user = userdao.findById(id).orElse(new User());
+        ModelAndView mav = new ModelAndView("deleteTask");
+        Task task= userdao.findById(id).orElse(new User());
         userdao.deleteById(id);
         mav.addObject(user);
         return mav;
