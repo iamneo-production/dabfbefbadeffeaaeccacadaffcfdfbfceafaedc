@@ -3,6 +3,8 @@ package com.examly.springapp;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
+
 
 @Entity
 @Table(name="tasks1")
@@ -10,9 +12,13 @@ public class Task {
 	
 	@Id
 	private String taskId;
+	@Column(name = "taskHolderName")
 	private String taskHolderName;
+	@Column(name = "taskDate")
 	private String taskDate;
+	@Column(name = "taskName")
 	private String taskName;
+	@Column(name = "taskStatus")
 	private String taskStatus;
 	
 	public Task(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
