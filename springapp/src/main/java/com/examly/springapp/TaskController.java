@@ -3,6 +3,7 @@ package com.examly.springapp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,18 +67,22 @@ public class TaskController {
 	*/
 
 	
-	@RequestMapping("/alltasks")
-	public List<Task> getAllSubjects()
+	@GetMapping("/alltasks")
+	public List<Task> getAllTask()
 	{
 		return taskService.getAllSubjects();
 	}
-	
+	@GetMapping("/getTask/{id}")  
+public Task getTask(@PathVariable("taskId") String id)   
+{  
+return TaskService.getTasksById(id);  
+}  
 	@RequestMapping(method = RequestMethod.POST, value="/saveTask")
 	public void addSubject(@RequestBody Task task)
 	{
 		taskService.addSubject(task);
 	}
-	
+	/*
 	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
 	public void updateSubject(@PathVariable String id, @RequestBody Task task)
 	{
@@ -94,7 +99,7 @@ public class TaskController {
 	{
 		taskService.deleteSubject(id);
 	}
-	
+	*/
 	
 	
 	
