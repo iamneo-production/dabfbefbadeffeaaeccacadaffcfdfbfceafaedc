@@ -16,28 +16,31 @@ public class TaskServiceImpl implements TaskService {
     @Autowired
 	public TaskRepo repo;
 
-    @Override
     public TaskServiceImpl(TaskRepo repo) {
         this.repo = repo;
     }
 	
+    @Override
+	public void addTask(TaskModel model) {
+		repo.save(model);
+		
+	}
+    
     @Override
 	public List<TaskModel> getAllTasks()
 	{
 		return repo.findAll();
 	}
 
-	public void addTask(TaskModel model) {
-		repo.save(model);
-		
-	}
+    
 
+    @Override
 	public void updateTask(String id, TaskModel model) {
 		repo.save(model);
 		
 	}
 
-	
+    @Override
     public TaskModel getTaskById(String id) {
         Optional<TaskModel> task = repo.findById(id);
         if (task.isPresent()) {
@@ -49,6 +52,7 @@ public class TaskServiceImpl implements TaskService {
     }
 	
 
+    @Override
 	public void deleteTask(String id) {
 		repo.deleteById(id);
 	}

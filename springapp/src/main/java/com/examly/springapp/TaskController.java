@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +39,7 @@ public class TaskController {
 
 	@GetMapping("/getTask/{id}")
     public ResponseEntity<TaskModel> getTaskById(@PathVariable("id") String id) {
-        ResponseEntity<TaskModel> matchtask = new ResponseEntity<Task>(service.getTaskById(id), HttpStatus.OK);
+        ResponseEntity<TaskModel> matchtask = new ResponseEntity<TaskModel>(service.getTaskById(id), HttpStatus.OK);
         return matchtask;
     }
 	
