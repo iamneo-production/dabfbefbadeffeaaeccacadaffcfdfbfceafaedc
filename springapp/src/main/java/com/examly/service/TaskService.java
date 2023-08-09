@@ -1,4 +1,4 @@
-package com.examly.service;
+package com.example.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,36 +6,32 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Repository.TaskRepo;
+import com.example.model.taskmodel;
 
 @Service
 public class TaskService {
 	@Autowired
-	public TaskRepository taskRepo;
-    public void addTask(Task task) {
-		taskRepo.save(task);
+	public TaskRepo repo;
+
+	public List<taskmodel> getAllTasks()
+	{
+		List<taskmodel> list = new ArrayList<>();
+		repo.findAll().forEach(list::add);
+		return list;
+	}
+
+	public void addTask(taskmodel model) {
+		repo.save(model);
 		
 	}
 
-	public List<Task> getAllTask()
-	{
-		List<Task> tasks = new ArrayList<Task>();  
-		taskRepo.findAll().forEach(task1 -> tasks.add(task1));  
-		return tasks;  
-	}
-
-	public Task getTaskById(String id){
-        return taskRepo.findById(id).get();  
+	public void updateTask(String id, taskmodel model) {
+		repo.save(model);
+		
 	}
 
 	public void deleteTask(String id) {
-		taskRepo.deleteById(id);
-		
+		repo.deleteById(id);
 	}
-
-	public void updateTask(String id, Task task) {
-		taskRepo.save(task);
-		
-	}
-    
-	
 }
