@@ -1,4 +1,4 @@
-package com.examly.controller;
+package com.example.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.examly.model.*;
-import com.examly.service.*;
+import com.example.model.*;
+import com.example.service.*;
 
 
 @RestController

@@ -1,13 +1,12 @@
-package com.examly.repository;
+package com.example.Repository;
 
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-import com.examly.model.taskmodel;
+import com.example.model.taskmodel;
 
 
-@Repository
+
 public interface TaskRepo extends CrudRepository<taskmodel,String> {
 	
 
