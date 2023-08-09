@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TaskController {
 	@Autowired
     private TaskRepository taskRepo;
-
-	private TaskService taskService;
     
     @RequestMapping("/")
     public String index() {
@@ -30,7 +28,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/allTask", method = RequestMethod.GET)
-    public ModelAndView findAllUsers(ModelAndView mav) {
+    public ModelAndView findAllTasks(ModelAndView mav) {
         Iterable<Task> tasks = taskRepo.findAll();
         mav.addObject("tasks", tasks);
         mav.setViewName("getData");
@@ -38,7 +36,7 @@ public class TaskController {
     }
 
     @RequestMapping("/getTask")
-    public ModelAndView getuser(@RequestParam String id) {
+    public ModelAndView getTask(@RequestParam String id) {
 
         ModelAndView mav = new ModelAndView("showTasks");
         Task task = taskRepo.findById(id).orElse(new Task());
@@ -47,7 +45,7 @@ public class TaskController {
     }
 
     @RequestMapping("/changeStatus")
-    public ModelAndView updateuser(Task task) {
+    public ModelAndView updateTask(Task task) {
 
         ModelAndView mav = new ModelAndView("updateTasks");
         task = taskRepo.findById(task.getTaskId()).orElse(new Task());
@@ -57,12 +55,12 @@ public class TaskController {
     }
 
     @RequestMapping("/deleteTask")
-    public ModelAndView deleteuser(@RequestParam int id) {
+    public ModelAndView deleteTask(@RequestParam String id) {
 
         ModelAndView mav = new ModelAndView("deleteTask");
-        Task task= userdao.findById(id).orElse(new User());
-        userdao.deleteById(id);
-        mav.addObject(user);
+        Task task= taskRepo.findById(id).orElse(new Task());
+        taskRepo.deleteById(id);
+        mav.addObject(task);
         return mav;
     }
 
