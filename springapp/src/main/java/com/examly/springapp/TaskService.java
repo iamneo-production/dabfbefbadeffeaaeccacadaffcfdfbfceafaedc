@@ -2,6 +2,7 @@ package com.examly.springapp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,15 +28,12 @@ public class TaskService {
 		
 	}
 
-	@Override
-    public User getUserById(Long userId) {
-        Optional<User> optionalUser = userRepository.findById(userId);
+	
+    public TaskModel getTaskById(String id, TaskModel model) {
+        Optional<TaskModel> optionalUser = repo.findById(id);
         return optionalUser.get();
     }
-	public void getTaskById(String id, TaskModel model) {
-		repo.findById(id);
-		
-	}
+	
 
 	public void deleteTask(String id) {
 		repo.deleteById(id);
