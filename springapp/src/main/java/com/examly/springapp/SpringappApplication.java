@@ -2,12 +2,10 @@ package com.examly.springapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @SpringBootApplication
-@EnableConfigurationProperties
-@EntityScan(basePackages = {"com.examly.model"}) 
 public class SpringappApplication {
 
 	public static void main(String[] args) {
