@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface TaskRepo extends CrudRepository<TaskModel,String> {
+public interface TaskRepo extends JRepository<TaskModel,String> {
 	
 
 }

@@ -11,9 +11,15 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class TaskService {
-	@Autowired
+public class TaskServiceImpl implements TaskService {
+   
+    @Autowired
 	public TaskRepo repo;
+    
+    public TaskServiceImpl(TaskRepo repo) {
+        this.repo = repo;
+    }
+	
 
 	public List<TaskModel> getAllTasks()
 	{
