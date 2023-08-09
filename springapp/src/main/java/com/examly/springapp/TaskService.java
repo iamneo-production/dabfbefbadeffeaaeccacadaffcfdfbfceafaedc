@@ -29,6 +29,11 @@ public class TaskService {
 		
 	}
 
+	public void getTaskById(String id, TaskModel model) {
+		repo.findById(id);
+		
+	}
+
 	public void deleteTask(String id) {
 		repo.deleteById(id);
 	}

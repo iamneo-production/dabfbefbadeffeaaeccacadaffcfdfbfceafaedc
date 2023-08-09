@@ -16,7 +16,7 @@ public class TaskController {
 	@Autowired
 	private TaskService service;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/alltasks")
+	@RequestMapping("/alltasks")
 	public List<TaskModel> getAllTasks()
 	{
 		return service.getAllTasks();
@@ -33,6 +33,13 @@ public class TaskController {
 	{
 		service.updateTask(id, model);
 	}
+
+	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
+	public void getTaskById(@PathVariable String id, @RequestBody TaskModel model)
+	{
+		service.getTaskById(id, model);
+	}
+
 	@RequestMapping(method = RequestMethod.DELETE, value="/deleteTask/{id}")
 	public void deleteSubject(@PathVariable String id)
 	{
