@@ -1,6 +1,7 @@
 package com.examly.model;
 import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.Table;
 @Entity
 @Table(name="Tasks")
@@ -8,10 +9,15 @@ public class taskmodel {
 
 		
 		@Id
+		@Column(name="taskId")
 		private String taskId;
+		@Column(name="taskHolderName")
 		private String taskHolderName;
+		@Column(name="taskDate")
 		private String taskDate;
+		@Column(name="taskName")
 		private String taskName;
+		@Column(name="taskStatus")
 		private String taskStatus;
 		
 		
