@@ -15,7 +15,7 @@ public class TaskServiceImpl implements TaskService {
    
     @Autowired
 	public TaskRepo repo;
-    
+
     public TaskServiceImpl(TaskRepo repo) {
         this.repo = repo;
     }
@@ -37,7 +37,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	
-    public Optional<TaskModel> getTaskById(String id) {
+    public TaskModel getTaskById(String id) {
         return repo.findById(id);
     }
 	
