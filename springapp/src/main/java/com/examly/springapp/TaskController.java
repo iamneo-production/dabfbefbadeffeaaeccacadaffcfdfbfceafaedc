@@ -34,7 +34,7 @@ public class TaskController {
 		service.updateTask(id, model);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value="/changeStatus/{id}")
+	@RequestMapping(method = RequestMethod.GET, value="/getTask/{id}")
 	public void getTaskById(@PathVariable String id, @RequestBody TaskModel model)
 	{
 		service.getTaskById(id, model);
