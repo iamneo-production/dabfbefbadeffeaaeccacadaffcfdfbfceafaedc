@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class TaskController {
 	@Autowired
-    private TaskRepository taskRepo;
-    
+	private TaskService taskService;
+
+    //private TaskRepository taskRepo;
+    /*
     @RequestMapping("/")
     public String index() {
         return "index";
@@ -63,8 +63,9 @@ public class TaskController {
         mav.addObject(task);
         return mav;
     }
+	*/
 
-	/*
+	
 	@RequestMapping("/alltasks")
 	public List<Task> getAllSubjects()
 	{
@@ -98,7 +99,6 @@ public class TaskController {
 	
 	
 	
-	*/
 	
 	
 }
