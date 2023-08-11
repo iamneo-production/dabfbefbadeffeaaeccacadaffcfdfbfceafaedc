@@ -37,7 +37,7 @@ public class TaskController {
 		return service.getAllTasks();
 	}
     
-	@GetMapping("/getTask/{id}")
+	@GetMapping("/getTask/{id}") 
 	public Taskmodel getTaskById(@PathVariable String id) {
 		return service.getTaskById(id);
 	}
